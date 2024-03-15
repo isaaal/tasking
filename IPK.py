@@ -1,12 +1,22 @@
 Algoritma= float(input("MAsukan Nilai Algoritma: "))
-PerancanganObjek= float(input("MAsukan Nilai Perancangan objek: "))
-Kalkulus= float(input("MAsukan Nilai Kalkulus: "))
-EtikaProfesi= float(input("MAsukan Nilai Etika profesi: "))
-DataBase= float(input("MAsukan Nilai Data base: "))
-Inggris1= float(input("MAsukan Nilai Inggris: ") )
-sks = 3
+sksAlgo = int(input("Masukan sks algoritma :"))
 
-def Klasiafikasi_Nilai (nilai):
+PerancanganObjek= float(input("MAsukan Nilai Perancangan objek: "))
+sksPO =int(input("Masukan sks Perancangan objek :"))
+
+Kalkulus= float(input("MAsukan Nilai Kalkulus : "))
+sksKalkulus = int(input("Masukan sks kalkulus :"))
+
+EtikaProfesi= float(input("MAsukan Nilai Etika profesi: "))
+sksEF = int(input("Masukan sks Etika profesi : "))
+
+DataBase= float(input("MAsukan Nilai Data base: "))
+sksDB =int(input("Masukan sks data base : "))
+
+Inggris1= float(input("MAsukan Nilai Inggris: ") )
+sksEng = int(input("Masukan sks Inggris"))
+
+def Klasiafikasi_Nilai (nilai, sks):
     if nilai <30:
         return 0
     elif nilai <=34:
@@ -37,12 +47,12 @@ def Klasiafikasi_Nilai (nilai):
         return 4 * sks
 
 
-hasila = Klasiafikasi_Nilai(Algoritma) 
-hasilb = Klasiafikasi_Nilai(PerancanganObjek) 
-hasilc = Klasiafikasi_Nilai(Kalkulus) 
-hasild = Klasiafikasi_Nilai(EtikaProfesi) 
-hasile = Klasiafikasi_Nilai(DataBase) 
-hasilf = Klasiafikasi_Nilai(Inggris1) 
+hasila = Klasiafikasi_Nilai(Algoritma, sksAlgo) 
+hasilb = Klasiafikasi_Nilai(PerancanganObjek, sksPO) 
+hasilc = Klasiafikasi_Nilai(Kalkulus, sksKalkulus) 
+hasild = Klasiafikasi_Nilai(EtikaProfesi, sksEF) 
+hasile = Klasiafikasi_Nilai(DataBase, sksDB) 
+hasilf = Klasiafikasi_Nilai(Inggris1, sksEng) 
 
 print("Nilai Algoritma =" ,hasila)
 print("Nilai Perancangan Objek =",hasilb)
@@ -51,5 +61,5 @@ print("Nilai Etika Profesi =",hasild)
 print("Nilai Data Base",hasile)
 print("Nilai Inggris =",hasilf)
 
-ip = (hasila + hasilb + hasilc + hasild + hasile + hasilf)/18
+ip = (hasila + hasilb + hasilc + hasild + hasile + hasilf)/(sksAlgo+sksEng+sksDB+sksEF+sksKalkulus+sksPO)
 print("Nilai IP anda =", ip)
